@@ -1,5 +1,11 @@
 function hasTargetSum(array, target) {
-  // Write your algorithm here
+  for (let i = 0; i < array.length; i++) {
+    const num = target - array[i];
+    for (let next = i + 1; next < array.length; next++) {
+      if (array[next] === num) return true;
+    }
+  }
+  return false;
 }
 
 /* 
@@ -12,7 +18,7 @@ function hasTargetSum(array, target) {
 
 /*
   Add written explanation of your solution here
-*/
+*/ 
 
 // You can run `node index.js` to view these console logs
 if (require.main === module) {
